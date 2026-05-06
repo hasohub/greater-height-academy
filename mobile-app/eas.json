@@ -4,7 +4,7 @@
       "android": {
         "buildType": "apk",
         "credentialsSource": "remote",
-        "image": "ubuntu-22.04-android-34"
+        "image": "ubuntu-22.04-jdk-17-ndk-r25b"
       }
     }
   },
