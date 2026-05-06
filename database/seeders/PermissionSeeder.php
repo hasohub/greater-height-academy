@@ -428,6 +428,9 @@ class PermissionSeeder extends Seeder
             'name' => 'header-academics',
         ]);
         Permission::firstOrCreate([
+            'name' => 'header-communication',
+        ]);
+        Permission::firstOrCreate([
             'name' => 'menu-class',
         ]);
         Permission::firstOrCreate([
@@ -472,6 +475,15 @@ class PermissionSeeder extends Seeder
         Permission::firstOrCreate([
             'name' => 'menu-fee',
         ]);
+        Permission::firstOrCreate([
+            'name' => 'menu-sms',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'manage sms',
+        ]);
+        Permission::firstOrCreate([
+            'name' => 'read sms',
+        ]);
         /**
          * assign permissions to roles.
          */
@@ -480,7 +492,9 @@ class PermissionSeeder extends Seeder
         $admin = Role::where('name', 'admin')->first();
         $admin->syncPermissions([
             'header-administrate',
+            'header-schools',
             'header-academics',
+            'header-communication',
             'menu-section',
             'menu-class',
             'menu-student',
@@ -496,6 +510,7 @@ class PermissionSeeder extends Seeder
             'menu-parent',
             'menu-account-application',
             'menu-fee',
+            'menu-sms',
             'manage school settings',
             'create section',
             'read section',
@@ -598,6 +613,8 @@ class PermissionSeeder extends Seeder
             'read fee invoice record',
             'update fee invoice record',
             'delete fee invoice record',
+            'manage sms',
+            'read sms',
         ]);
 
         //assign permissions to teacher

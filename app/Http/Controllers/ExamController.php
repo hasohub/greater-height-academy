@@ -6,7 +6,9 @@ use App\Http\Requests\StoreExamRequest;
 use App\Http\Requests\UpdateExamRequest;
 use App\Http\Requests\UpdateExamStatusRequest;
 use App\Models\Exam;
+use App\Models\ExamRecord;
 use App\Services\Exam\ExamService;
+use App\Services\AutoSmsService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\View\View;
@@ -14,10 +16,12 @@ use Illuminate\View\View;
 class ExamController extends Controller
 {
     public ExamService $examService;
+    protected AutoSmsService $autoSms;
 
-    public function __construct(ExamService $examService)
+    public function __construct(ExamService $examService, AutoSmsService $autoSms)
     {
         $this->examService = $examService;
+        $this->autoSms = $autoSms;
         $this->authorizeResource(Exam::class, 'exam');
     }
 
@@ -146,9 +150,16 @@ class ExamController extends Controller
     public function setPublishResultStatus(Exam $exam, UpdateExamStatusRequest $request): RedirectResponse
     {
         $this->authorize('update', $exam);
-        //get status from request
         $status = $request->status;
         $this->examService->setPublishResultStatus($exam, $status);
+
+        // If results are being published, trigger SMS to parents
+        if ($status) {
+            $recordIds = ExamRecord::where('exam_id', $exam->id)->pluck('id')->toArray();
+            if (!empty($recordIds) && config('services.auto_sms_results', false)) {
+                $this->autoSms->sendExamResultNotification($recordIds);
+            }
+        }
 
         return back()->with('success', 'Result published status updated successfully');
     }

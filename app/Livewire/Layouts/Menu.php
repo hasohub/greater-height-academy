@@ -339,6 +339,39 @@ class Menu extends Component
                     ],
                 ],
             ],
+            ['header' => 'Communication', 'can' => 'header-communication'],
+            [
+                'type'    => 'menu-item',
+                'text'    => 'SMS Center',
+                'icon'    => 'fas fa-sms',
+                'can'     => 'menu-sms',
+                'submenu' => [
+                    [
+                        'type'  => 'menu-item',
+                        'text'  => 'Compose SMS',
+                        'route' => 'sms.index',
+                        'can'   => 'manage sms',
+                    ],
+                    [
+                        'type'  => 'menu-item',
+                        'text'  => 'SMS History',
+                        'route' => 'sms.history',
+                        'can'   => 'read sms',
+                    ],
+                    [
+                        'type'  => 'menu-item',
+                        'text'  => 'SMS Templates',
+                        'route' => 'sms.templates',
+                        'can'   => 'manage sms',
+                    ],
+                    [
+                        'type'  => 'menu-item',
+                        'text'  => 'SMS Settings',
+                        'route' => 'sms.settings',
+                        'can'   => 'manage sms',
+                    ],
+                ],
+            ],
             ['header' => 'Academics', 'can' => 'header-academics'],
             [
                 'type'    => 'menu-item',
