@@ -2,6 +2,7 @@
 node_modules/
 .expo/
 .expo-shared/
+.expo-env.d.ts
 
 # Build outputs
 android/.gradle/
@@ -16,10 +17,6 @@ ios/Pods/
 .vscode/
 *.swp
 *.swo
-
-# OS
-.DS_Store
-Thumbs.db
 
 # Env
 .env

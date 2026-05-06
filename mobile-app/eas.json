@@ -1,0 +1,15 @@
+module.exports = {
+  expo: {
+    name: 'Greater Height Academy',
+    slug: 'greater-height-academy-mobile',
+    platformConstants: {
+      eas: {
+        buildCredentials: {
+          keystore: {
+            deferred: true,
+          },
+        },
+      },
+    },
+  },
+};
