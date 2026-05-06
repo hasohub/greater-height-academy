@@ -6,6 +6,9 @@
     "orientation": "portrait",
     "platforms": ["ios", "android"],
     "icon": "./assets/icon.png",
+    "android": {
+      "package": "com.greaterheight.academy"
+    },
     "extra": {
       "eas": {
         "projectId": "3b7e2afb-70f6-4eb5-b976-1aabbf5ceba8"
