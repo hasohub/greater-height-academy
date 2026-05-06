@@ -3,8 +3,12 @@
     "preview": {
       "android": {
         "buildType": "apk",
-        "credentialsSource": "remote"
+        "credentialsSource": "remote",
+        "image": "ubuntu-22.04-android-34"
       }
     }
+  },
+  "cli": {
+    "version": ">= 0.38.2"
   }
 }
