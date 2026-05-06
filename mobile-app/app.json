@@ -9,6 +9,21 @@
       "package": "com.greaterheight.academy",
       "versionCode": 1
     },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34,
+            "minSdkVersion": 21,
+            "buildToolsVersion": "34.0.0",
+            "enableProguardInReleaseBuilds": false,
+            "newArchEnabled": false
+          }
+        }
+      ]
+    ],
     "extra": {
       "eas": {
         "projectId": "3b7e2afb-70f6-4eb5-b976-1aabbf5ceba8"
