@@ -2,34 +2,10 @@
   "expo": {
     "name": "Greater Height Academy",
     "slug": "greater-height-academy-mobile",
-    "description": "Mobile app for Greater Height Academy School Management System",
-    "platforms": ["ios", "android"],
     "version": "1.0.0",
     "orientation": "portrait",
+    "platforms": ["ios", "android"],
     "icon": "./assets/icon.png",
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#4F46E5"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": ["**/*"],
-    "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.greaterheight.academy"
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#4F46E5"
-      },
-      "package": "com.greaterheight.academy"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    },
     "extra": {
       "eas": {
         "projectId": "3b7e2afb-70f6-4eb5-b976-1aabbf5ceba8"
