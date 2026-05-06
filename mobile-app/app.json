@@ -6,7 +6,8 @@
     "orientation": "portrait",
     "platforms": ["ios", "android"],
     "android": {
-      "package": "com.greaterheight.academy"
+      "package": "com.greaterheight.academy",
+      "versionCode": 1
     },
     "extra": {
       "eas": {
